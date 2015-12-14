@@ -1,0 +1,43 @@
+set nu
+set colorcolumn=80
+:hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=4
+set scrolloff=2
+set splitright
+set splitbelow
+" Add the 'space' character (ASCII 32) to the list of chars Vim sees as valid
+" in a filename.
+set isfname+=32
+
+" Run :PlugInstall after adding to this list.
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+Plug 'SirVer/ultisnips'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+
+call plug#end()
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+" See https://code.google.com/p/mintty/wiki/Tips#Mode-dependent_cursor_in_vim
+" Mode dependent cursor settings for minTTY.
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+" See https://code.google.com/p/mintty/wiki/Tips#Avoiding_escape_timeout_issues_in_vim
+" Fix escape key timeout delay.
+let &t_ti.="\e[?7727h"
+let &t_te.="\e[?7727l"
+noremap <Esc>O[ <Esc>
+noremap! <Esc>O[ <C-c>

@@ -1,0 +1,42 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+
+set nu
+set lines=57
+set columns=250
+set guifont=Consolas:h10:cANSI
+set colorcolumn=80
+:hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+
+" Run :PlugInstall after adding to this list.
+call plug#begin('U:\vimfiles\plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+Plug 'SirVer/ultisnips'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
+set background=dark
+colorscheme solarized
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=4
+let g:xml_syntax_folding=1
+set scrolloff=2
+set splitright
+set splitbelow
+" Add the 'space' character (ASCII 32) to the list of chars Vim sees as valid
+" in a filename.
+" set isfname+=32
+" Registers get wiped on shutdown.
+" It's only the <0 bit that does that, the rest are the defaults.
+set viminfo='100,<0,s10,h,rA:,rB:
+
