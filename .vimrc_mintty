@@ -20,6 +20,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'SirVer/ultisnips'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
 
