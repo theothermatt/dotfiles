@@ -108,6 +108,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
+Plug 'crusoexia/vim-monokai'
 
 call plug#end()
 
@@ -117,7 +118,7 @@ if has("gui_running")
 	set columns=208
         set background=dark
 	" Color scheme.
-	colorscheme solarized
+	colorscheme monokai
 
 	" Get GUI up.
 	set guioptions+=T
@@ -131,3 +132,8 @@ set breakindent
 set colorcolumn=80
 set splitright
 set splitbelow
+" Sort out the status line so it's readable when not focused.
+hi StatusLine ctermfg=231 ctermbg=241 cterm=bold guifg=#f8f8f2 guibg=#64645e gui=bold
+hi StatusLineNC ctermfg=231 ctermbg=241 cterm=NONE guifg=#d8d8d2 guibg=#3c3c36 gui=NONE
+
+map <C-n> :NERDTreeToggle<CR>
