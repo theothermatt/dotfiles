@@ -1,0 +1,6 @@
+[user]
+	email = theothermatt@gmail.com
+	name = Matt Hill
+
+[alias]
+    st = status -sb
