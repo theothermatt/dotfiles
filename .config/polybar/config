@@ -51,8 +51,8 @@ font-0 = dejavusans:pixelsize=10;1
 font-1 = notosans:pixelsize=10;1
 font-2 = fontawesome:pixelsize=10;1
 
-modules-left = bspwm
-modules-center = xwindow
+modules-left = bspwm xwindow
+modules-center = 
 modules-right = cpu memory filesystem date powermenu
 
 tray-position = right
@@ -210,7 +210,7 @@ interval = 2
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format = <label> <bar-used>
-bar-used-indicator = 
+bar-used-indicator = |
 bar-used-width = 20
 bar-used-foreground-0 = #55aa55
 bar-used-foreground-1 = #557755
