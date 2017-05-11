@@ -109,20 +109,12 @@ Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
 Plug 'crusoexia/vim-monokai'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
-if has("gui_running")
-	" More lines and columns.
-	set lines=75
-	set columns=208
-        set background=dark
-	" Color scheme.
-	colorscheme monokai
-
-	" Get GUI up.
-	set guioptions+=T
-endif
+let g:xml_syntax_folding=1
+set t_Co=256
 set nu
 set tabstop=8
 set softtabstop=4
@@ -137,3 +129,29 @@ hi StatusLine ctermfg=231 ctermbg=241 cterm=bold guifg=#f8f8f2 guibg=#64645e gui
 hi StatusLineNC ctermfg=231 ctermbg=241 cterm=NONE guifg=#d8d8d2 guibg=#3c3c36 gui=NONE
 
 map <C-n> :NERDTreeToggle<CR>
+set colorcolumn=80
+:hi ColorColumn ctermbg=darkgrey guibg=darkgrey
+colorscheme monokai
+set background=light
+if has("gui_running")
+        colorscheme monokai
+        set background=dark
+	set guioptions-=T
+        set lines=64
+        set columns=205
+endif
+
+au BufNewFile,BufRead *.blade.php set filetype=html
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+set nobackup
+set writebackup
+set backupcopy=yes
+
+set directory=~/.backup//,.
+set backupdir=~/.backup//,.
+set undodir=~/.backup//,.
+
+set scrolloff=2
