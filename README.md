@@ -10,5 +10,5 @@ My dotfiles:
 `.config`:
 * `i3/config`        : Badly patched together i3 config that started out as a
                        sway config.  Not pretty, needs work.
-* `git/config        : Git config
+* `git/config`       : Git config
 
