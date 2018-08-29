@@ -8,9 +8,7 @@ My dotfiles:
 * `muttrc`           : For the Mutt mail program.
 
 `.config`:
-* `bspwm/bspwmrc`    : Bspwm config
-* `sxhkd/sxhkdrc`    : Sxhkd config (used to send commands to bspwm)
-* `polybar/config    : Polybar config
-* `polybar/launch.sh : Launches polybar
+* `i3/config`        : Badly patched together i3 config that started out as a
+                       sway config.  Not pretty, needs work.
 * `git/config        : Git config
 
