@@ -1,0 +1,69 @@
+set editor=vim
+
+# MIME handling
+set mailcap_path = ~/.mutt/mailcap
+# Tell Mutt to use the handler for text/html found in the mailcap file to auto
+# view html emails in the pager.
+auto_view text/html
+# Prefer plain text over html when available.
+alternative_order text/plain text/html
+
+set sort=threads
+set sort_aux=date-received
+
+set sidebar_visible
+
+## IMAP ##
+set imap_user=CHANGEME
+# Browse mail directly on IMAP server instead of locally.
+set folder=imaps://CHANGEME
+# This is where unfiltered email arrives.
+set spoolfile=+Inbox
+# List IMAP folders to be synced, and appear in the 'y' menu.
+mailboxes =CHANGEME =CHANGEME2 =CHANGEME3
+set imap_check_subscribed
+# Cache IMAP message headers to improve performance.
+set header_cache = ~/.cache/mutt
+## /IMAP ##
+
+## Sending ##
+set realname=CHANGEME
+set from = CHANGEME
+# Actually use the 'from' defined above.
+set use_from = yes
+set smtp_url=smtps://CHANGEME
+# Force encryption, even try if server doesn't advertise the capability, since
+# Mutt would drop the connection anyway.
+set ssl_force_tls = yes
+# Where to put sent messages.
+set record = +'Sent'
+## /Sending ##
+
+# Bit more Vim like.
+bind pager j next-line
+bind pager k previous-line
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+bind pager R group-reply
+
+# Simple address book, straight from the Arch wiki
+# https://wiki.archlinux.org/index.php/Mutt#Address_aliases
+set alias_file = "~/.mutt/aliases"
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+# How long mutt blocks waiting for input before aborting, doing other
+# operations (checking for new mail, keeping IMAP alive), then waiting for
+# input again.
+set timeout = 60
+
+# Use IMAP IDLE feature - essentially tell server that it can push emails to
+# client
+set imap_idle
+
+# How long mutt waits before polling open IMAP connections to prevent the
+# server from closing them prematurely.
+set imap_keepalive = 180
